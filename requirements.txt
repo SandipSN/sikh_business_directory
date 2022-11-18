@@ -2,4 +2,3 @@ pandas
 deta
 folium
 branca
-PIL
