@@ -1,8 +1,10 @@
 import streamlit as st
 import database as db
+from PIL import Image
 
 # form
 
+st.set_page_config(page_title="SBR: Submission Form")
 st.title("Sikh Business Directory")
 st.write("## Submission Form")
 st.write("---")
@@ -143,3 +145,9 @@ if sure_check == 100:
 
 elif sure_check > 0 and sure_check < 100 :
     st.write("Go make sure!")
+    
+st.markdown("---")
+
+logo = Image.open('logo.png')
+st.image(logo, width=36)
+st.caption("Provided by the [Azadism Project](https://www.azadism.co.uk/)")
