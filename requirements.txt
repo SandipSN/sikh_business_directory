@@ -2,5 +2,5 @@ pandas
 deta
 folium
 branca
-st_aggrid
+streamlit-aggrid
 streamlit_folium
