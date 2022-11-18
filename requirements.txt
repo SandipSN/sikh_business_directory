@@ -1,0 +1,7 @@
+pandas
+deta
+st_aggrid
+folium
+streamlit_folium
+branca
+PIL
