@@ -127,7 +127,7 @@ st_data = st_folium(m, height= 725, width=725)
 
 st.markdown("---")
 st.markdown("## Submit")
-st.markdown("Want to add a business? Use the form linked [here](https://sandipsn-sikh-business-directory-form-sreq4c.streamlit.app/) to submit it for review")
+st.markdown("Want to add a business? Use the form linked [here](https://sikh-business-directory-form.streamlit.app/) to submit it for review")
 
 st.markdown("---")
 
