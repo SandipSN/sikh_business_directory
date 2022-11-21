@@ -123,7 +123,7 @@ except:
         folium.Marker([loc_data['LATITUDE'].iloc[i],loc_data['LONGITUDE'].iloc[i]],popup=popup).add_to(m)
 
 
-st_data = st_folium(m, height= 725, width=725)
+st_data = st_folium(m, height= 350, width=725)
 
 st.markdown("---")
 st.markdown("## Submit")
