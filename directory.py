@@ -9,7 +9,7 @@ import branca
 
 st.set_page_config(page_title="Sikh Business Directory")
 
-banner = Image.open('banner.png')
+banner = Image.open('banner.svg')
 st.image(banner)
 
 #st.title("Sikh Business Directory")
