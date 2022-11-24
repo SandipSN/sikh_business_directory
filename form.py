@@ -18,7 +18,7 @@ name = st.text_input("Enter the Business's Name")
 
 category = st.selectbox(
                 "Enter Category",
-                ("Arts & Crafts", "Clothing", "Entertainment & Events", "Finance", "Food & Drink", "Gurudwara", "Home & Garden", "Legal", "Technology",  "Travel", "Other")
+                ("Arts & Crafts", "Clothing", "Entertainment & Events", "Finance", "Food & Drink", "Gurudwara", "Health & Fitness", "Home & Garden", "Legal", "Technology",  "Travel", "Vehicle", "Other")
                 )
 
 if category == "Other": 
@@ -78,6 +78,18 @@ if category == "Food & Drink":
         otherOption2 = st.text_input("Please type in an appropriate sub-category:")
         sub_category = otherOption2
 
+if category == "Health & Fitness": 
+
+    sub_category = st.selectbox(
+                    "Enter Sub Category", 
+                    ("Gym", "Martial Arts", "Supplements", "Other"),
+                    key="1"
+                    )
+    
+    if sub_category == "Other": 
+        otherOption2 = st.text_input("Please type in an appropriate sub-category:")
+        sub_category = otherOption2
+
 if category == "Home & Garden": 
 
     sub_category = st.selectbox(
@@ -95,6 +107,18 @@ if category == "Technology":
     sub_category = st.selectbox(
                     "Enter Sub Category",
                     ("Websites, UI/UX", "Phone Repair", "Other"),
+                    key="2"
+                    )
+
+    if sub_category == "Other": 
+        otherOption2 = st.text_input("Please type in an appropriate sub-category:")
+        sub_category = otherOption2
+
+if category == "Vehicle": 
+
+    sub_category = st.selectbox(
+                    "Enter Sub Category",
+                    ("Dealerships", "Driving Tuition", "Mechanics", "Other"),
                     key="2"
                     )
 
