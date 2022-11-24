@@ -8,7 +8,11 @@ from PIL import Image
 import branca
 
 st.set_page_config(page_title="Sikh Business Directory")
-st.title("Sikh Business Directory")
+
+banner = Image.open('banner.png')
+st.image(banner)
+
+#st.title("Sikh Business Directory")
 
 st.markdown("---")
 
