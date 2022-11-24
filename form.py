@@ -164,7 +164,7 @@ sure_check = st.slider("How sure are you that the information provided is correc
 if sure_check == 100:
     
     if st.button("Submit"):
-        db.insert_record(biz_id, category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude)
+        db.insert_record(biz_id, category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude, user_email)
         st.success("Submitted for review")
 
 elif sure_check > 0 and sure_check < 100 :
