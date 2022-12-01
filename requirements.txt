@@ -4,4 +4,4 @@ folium
 branca
 streamlit-aggrid
 streamlit_folium
-streamlit_authenticator
+streamlit_authenticator==0.1.5
