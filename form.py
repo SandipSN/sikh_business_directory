@@ -154,6 +154,7 @@ biz_id = 0
 verified = 0
 latitude = 0
 longitude = 0
+approved_by = "awaiting approval"
 
 st.write("### Submit")
 
@@ -164,7 +165,7 @@ sure_check = st.slider("How sure are you that the information provided is correc
 if sure_check == 100:
     
     if st.button("Submit"):
-        db.insert_record(biz_id, category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude, user_email)
+        db.insert_record(biz_id, category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude, user_email, approved_by)
         st.success("Submitted for review")
 
 elif sure_check > 0 and sure_check < 100 :

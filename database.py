@@ -7,7 +7,7 @@ deta = Deta(DETA_KEY_BIZ)
 
 db = deta.Base("biz_dir")
 
-def insert_record(biz_id, category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude, user_email):
+def insert_record(biz_id, category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude, user_email, approved_by):
     return db.put({ 
         'Biz ID': biz_id, 
         'Category': category, 
@@ -22,9 +22,13 @@ def insert_record(biz_id, category, sub_category, name, city, nation, address, l
         'Verified': verified,
         'LATITUDE': latitude,
         'LONGITUDE': longitude,
-        'User Email': user_email
+        'User Email': user_email,
+        'Approved By': approved_by
         })
 
 def fetchdb(query):
     res = db.fetch(query)
     return res.items
+
+def update_verify(key, updates):
+    return db.update(key, updates)
