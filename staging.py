@@ -23,8 +23,6 @@ if authentication_status == False:
 if authentication_status == None:
     st.warning("Please enter your username and password")
 
-authentication_status = True
-
 if authentication_status:
 
     st.title("Staging Area")
