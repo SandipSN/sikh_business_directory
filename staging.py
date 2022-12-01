@@ -275,9 +275,9 @@ if authentication_status:
 
     biz_id = 0
 
-    approved_by = username
-
     if sure_check == 100:
+        
+        approved_by = st.text_input("Enter Your Username")
         
         if st.button('Confirm'):
 
