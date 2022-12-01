@@ -31,4 +31,4 @@ def fetchdb(query):
     return res.items
 
 def update_verify(key, updates):
-    return db.update(key, updates)
+    return db.update(updates, key)
