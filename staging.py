@@ -267,7 +267,10 @@ if authentication_status:
         "Verify or Reject Record",
         ('Verify', 'Reject'))
 
-    # if user name equals user name on record, then reject
+    if check == "Verify":
+        verified = 1
+    else:
+        verified = 2
 
     sure_check = st.slider(
         'Slide to 100 if you are sure',
@@ -280,48 +283,10 @@ if authentication_status:
         approved_by = st.text_input("Enter Your Username")
         
         if st.button('Confirm'):
-
-            if check == "Verify" and sure_check == 100:
-                verified = 1
-                updates = { 
-                    'Biz ID': biz_id, 
-                    'Category': category, 
-                    'Sub Category': sub_category,
-                    'Name': name,
-                    'City': city,  
-                    'Nation': nation, 
-                    'Address': address, 
-                    'Link': link, 
-                    'Telephone': telephone, 
-                    'Email': email,
-                    'Verified': verified,
-                    'LATITUDE': latitude,
-                    'LONGITUDE': longitude,
-                    'Approved By': approved_by
-                    }
-                db.update_verify(key=key_in, updates=updates)
+                
+                db.update_verify(key=key_in, updates={"Verified": verified})
                 st.info("Records Updated!: Verified")
 
-            elif check == "Reject" and sure_check == 100:
-                verified = 2
-                updates = { 
-                    'Biz ID': biz_id, 
-                    'Category': category, 
-                    'Sub Category': sub_category,
-                    'Name': name,
-                    'City': city,  
-                    'Nation': nation, 
-                    'Address': address, 
-                    'Link': link, 
-                    'Telephone': telephone, 
-                    'Email': email,
-                    'Verified': verified,
-                    'LATITUDE': latitude,
-                    'LONGITUDE': longitude,
-                    'Approved By': approved_by
-                    }
-                db.update_verify(key=key_in, updates=updates)
-                st.info("Records Updated!: Rejected")
         else:
             st.write("Make Sure to double check") 
 
