@@ -284,23 +284,7 @@ if authentication_status:
         
         if st.button('Confirm'):
                 
-                updates = { 
-                    'Biz ID': biz_id, 
-                    'Category': category, 
-                    'Sub Category': sub_category,
-                    'Name': name,
-                    'City': city,  
-                    'Nation': nation, 
-                    'Address': address, 
-                    'Link': link, 
-                    'Telephone': telephone, 
-                    'Email': email,
-                    'Verified': verified,
-                    'LATITUDE': latitude,
-                    'LONGITUDE': longitude,
-                    'Approved By': approved_by
-                    }
-                db.update_verify(key=key_in, updates=updates)
+                db.update_verify(key=key_in, updates={"Verified": verified})
                 st.info("Records Updated!: Verified")
 
         else:
