@@ -229,10 +229,7 @@ if authentication_status:
 
             longitude = st.number_input("Enter the Longitude", format="%.13f")
 
-
         st.markdown("---")
-
-
 
         st.write("### Links & Contact Info")
 
@@ -261,34 +258,51 @@ if authentication_status:
         if email_check:
             email = st.text_input("Enter Business Email Address")
 
-    st.markdown("---")
+        st.markdown("---")
 
-    check = st.radio(
-        "Verify or Reject Record",
-        ('Verify', 'Reject'))
+        check = st.radio(
+            "Verify or Reject Record",
+            ('Verify', 'Reject'))
 
-    if check == "Verify":
-        verified = 1
-    else:
-        verified = 2
+        if check == "Verify":
+            verified = 1
+        else:
+            verified = 2
 
-    sure_check = st.slider(
-        'Slide to 100 if you are sure',
-        0.0, 100.0)
+        sure_check = st.slider(
+            'Slide to 100 if you are sure',
+            0.0, 100.0)
 
-    biz_id = 0
-     
-    if sure_check == 100:
-
-        approved_by = st.text_input("Enter Your Username")
+        biz_id = 0
         
-        if st.button('Confirm'):
-                
-                db.update_verify(key=key_in, updates={"Verified": verified})
+        if sure_check == 100:
+
+            approved_by = st.text_input("Enter Your Username")
+            
+            if st.button('Confirm'):
+
+                updates = { 
+                        'Biz ID': biz_id, 
+                        'Category': category, 
+                        'Sub Category': sub_category,
+                        'Name': name,
+                        'City': city,  
+                        'Nation': nation, 
+                        'Address': address, 
+                        'Link': link, 
+                        'Telephone': telephone, 
+                        'Email': email,
+                        'Verified': verified,
+                        'LATITUDE': latitude,
+                        'LONGITUDE': longitude,
+                        'Approved By': approved_by
+                        }
+                    
+                db.update_verify(key=key_in, updates=updates)
                 st.info("Records Updated!: Verified")
 
-        else:
-            st.write("Make Sure to double check") 
+            else:
+                st.write("Make Sure to double check") 
 
-    elif sure_check > 0 and sure_check < 100 :
-        st.write("Go make sure!")
+        elif sure_check > 0 and sure_check < 100 :
+            st.write("Go make sure!")
