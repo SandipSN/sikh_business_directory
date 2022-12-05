@@ -282,8 +282,8 @@ if authentication_status:
 
         approved_by = st.text_input("Enter Your Username")
         
-       if st.button('Confirm'):
-
+        if st.button('Confirm'):
+            
             updates = { 
                     'Biz ID': biz_id, 
                     'Category': category, 
