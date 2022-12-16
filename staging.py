@@ -219,7 +219,7 @@ if authentication_status:
         
         if latitude_check:
 
-            latitude = st.number_input("Enter the Latitude", format="%.13f")
+            latitude = st.text_input("Enter the Latitude")
                    
         longitude = st.metric(label="LONGITUDE", value=df.loc[key_in, "LONGITUDE"])
                 
@@ -227,7 +227,7 @@ if authentication_status:
         
         if longitude_check:
 
-            longitude = st.number_input("Enter the Longitude", format="%.13f")
+            longitude = st.text_input("Enter the Longitude")
             
         st.markdown("---")
 
@@ -284,8 +284,23 @@ if authentication_status:
             
             if st.button('Confirm'):
                 
-                db.insert_record(category, sub_category, name, city, nation, address, link, telephone, email, verified, latitude, longitude, user_email, approved_by)
-                                
+                updates = { 
+                        'Category': category, 
+                        'Sub Category': sub_category,
+                        'Name': name,
+                        'City': city,  
+                        'Nation': nation, 
+                        'Address': address, 
+                        'Link': link, 
+                        'Telephone': telephone, 
+                        'Email': email,
+                        'Verified': verified,
+                        'LATITUDE': latitude,
+                        'LONGITUDE': longitude,
+                        'Approved By': approved_by
+                        }
+                    
+                db.update(updates=updates, id=key_in)   
                 st.info("Records Updated!: Verified")
 
             else:
