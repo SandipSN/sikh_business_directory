@@ -1,5 +1,5 @@
 pandas
-deta
+supabase==0.7.1
 folium
 branca
 streamlit-aggrid
