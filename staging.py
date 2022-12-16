@@ -297,7 +297,7 @@ if authentication_status:
                         'Verified': int(verified),
                         'LATITUDE': str(latitude),
                         'LONGITUDE': str(longitude),
-                        'Approved By': str(approved_by)
+                        'Approved By': str(approved_by),
                         })
                     
                 db.update(updates=updates, id=key_in)   
