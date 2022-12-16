@@ -215,19 +215,28 @@ if authentication_status:
 
         latitude = st.metric(label="LATITUDE", value=df.loc[key_in, "LATITUDE"])
         
+        latitude = int(latitude)
+        
         latitude_check = st.checkbox('Update?', key="latitude_check")
         
         if latitude_check:
 
             latitude = st.number_input("Enter the Latitude", format="%.13f")
+            
+            latitude = int(latitude)
 
+        
         longitude = st.metric(label="LONGITUDE", value=df.loc[key_in, "LONGITUDE"])
+        
+        longitude = int(longitude)
         
         longitude_check = st.checkbox('Update?', key="longitude_check")
         
         if longitude_check:
 
             longitude = st.number_input("Enter the Longitude", format="%.13f")
+            
+            longitude = int(longitude)
 
         st.markdown("---")
 
