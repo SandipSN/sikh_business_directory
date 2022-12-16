@@ -284,7 +284,7 @@ if authentication_status:
             
             if st.button('Confirm'):
                 
-                updates = json.dumps{ 
+                updates = json.dumps({ 
                         'Category': str(category), 
                         'Sub Category': str(sub_category),
                         'Name': str(name),
@@ -298,7 +298,7 @@ if authentication_status:
                         'LATITUDE': str(latitude),
                         'LONGITUDE': str(longitude),
                         'Approved By': str(approved_by)
-                        }
+                        })
                     
                 db.update(updates=updates, id=key_in)   
                 st.info("Records Updated!: Verified")
