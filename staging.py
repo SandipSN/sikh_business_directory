@@ -281,19 +281,19 @@ if authentication_status:
             if st.button('Confirm'):
 
                 updates = json.dumps({ 
-                        'Category': category, 
-                        'Sub Category': sub_category,
-                        'Name': name,
-                        'City': city,  
-                        'Nation': nation, 
-                        'Address': address, 
-                        'Link': link, 
-                        'Telephone': telephone, 
-                        'Email': email,
-                        'Verified': verified,
-                        'LATITUDE': latitude,
-                        'LONGITUDE': longitude,
-                        'Approved By': approved_by
+                        'Category': str(category), 
+                        'Sub Category': str(sub_category),
+                        'Name': str(name),
+                        'City': str(city),  
+                        'Nation': str(nation), 
+                        'Address': str(address), 
+                        'Link': str(link), 
+                        'Telephone': str(telephone), 
+                        'Email': str(email),
+                        'Verified': int(verified),
+                        'LATITUDE': int(latitude),
+                        'LONGITUDE': int(longitude),
+                        'Approved By': str(approved_by)
                         })
                     
                 db.update(updates=updates, id=key_in)
