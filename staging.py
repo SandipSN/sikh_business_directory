@@ -28,7 +28,7 @@ if authentication_status:
     st.title("Staging Area")
     st.subheader("Review record")
 
-    data = db.fetchdb({"Verified": 0})
+    data = db.fetchdb(0)
     #data = db.get_unverified("no")
 
     df = pd.DataFrame(data)
@@ -273,8 +273,7 @@ if authentication_status:
             'Slide to 100 if you are sure',
             0.0, 100.0)
 
-        biz_id = 0
-        
+       
         if sure_check == 100:
 
             approved_by = st.text_input("Enter Your Username")
@@ -282,7 +281,6 @@ if authentication_status:
             if st.button('Confirm'):
 
                 updates = { 
-                        'Biz ID': biz_id, 
                         'Category': category, 
                         'Sub Category': sub_category,
                         'Name': name,
@@ -298,7 +296,7 @@ if authentication_status:
                         'Approved By': approved_by
                         }
                     
-                db.update_verify(key=key_in, updates=updates)
+                db.update(updates=updates, id=key_in)
                 st.info("Records Updated!: Verified")
 
             else:

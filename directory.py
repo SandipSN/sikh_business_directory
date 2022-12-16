@@ -6,6 +6,7 @@ import folium
 from streamlit_folium import st_folium
 from PIL import Image
 import branca
+import json
 
 st.set_page_config(page_title="Sikh Business Directory")
 
@@ -16,8 +17,11 @@ st.image(banner)
 
 st.markdown("---")
 
-data = db.fetchdb({"Verified": 1})
-df = pd.DataFrame(data)
+data = db.fetchdb(1)
+json_data = data.json()
+json_data = json.loads(json_data)
+df = pd.json_normalize(json_data, 'data')
+
 directory = df[['Name', 'Link', 'Category', 'Sub Category', 'City', 'Nation', 'Address',  'Telephone', 'Email', 'LATITUDE', 'LONGITUDE']] 
 
 #AgGrid(directory)
