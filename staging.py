@@ -284,7 +284,7 @@ if authentication_status:
             
             if st.button('Confirm'):
                 
-                updates = json.loads({ 
+                updates = json.dumps({ 
                         'Category': str(category), 
                         'Sub Category': str(sub_category),
                         'Name': str(name),
