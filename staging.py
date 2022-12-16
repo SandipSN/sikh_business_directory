@@ -257,7 +257,11 @@ if authentication_status:
         
         if email_check:
             email = st.text_input("Enter Business Email Address")
+            
+        st.markdown("---")
 
+        user_email = st.metric(label="Email", value=df.loc[key_in, "User Email"])
+            
         st.markdown("---")
 
         check = st.radio(
