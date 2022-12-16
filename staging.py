@@ -214,30 +214,21 @@ if authentication_status:
         st.markdown("Copy/Paste address into [Google Maps](https://www.google.co.uk/maps), and right click on the marker for these values:")
 
         latitude = st.metric(label="LATITUDE", value=df.loc[key_in, "LATITUDE"])
-        
-        latitude = int(latitude)
-        
+               
         latitude_check = st.checkbox('Update?', key="latitude_check")
         
         if latitude_check:
 
             latitude = st.number_input("Enter the Latitude", format="%.13f")
-            
-            latitude = int(latitude)
-
-        
+                   
         longitude = st.metric(label="LONGITUDE", value=df.loc[key_in, "LONGITUDE"])
-        
-        longitude = int(longitude)
-        
+                
         longitude_check = st.checkbox('Update?', key="longitude_check")
         
         if longitude_check:
 
             longitude = st.number_input("Enter the Longitude", format="%.13f")
             
-            longitude = int(longitude)
-
         st.markdown("---")
 
         st.write("### Links & Contact Info")
@@ -300,8 +291,8 @@ if authentication_status:
                         'Telephone': str(telephone), 
                         'Email': str(email),
                         'Verified': int(verified),
-                        'LATITUDE': int(latitude),
-                        'LONGITUDE': int(longitude),
+                        'LATITUDE': str(latitude),
+                        'LONGITUDE': str(longitude),
                         'Approved By': str(approved_by)
                         })
                     
