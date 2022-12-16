@@ -37,10 +37,6 @@ if authentication_status:
 
     st.write(df)
 
-    df = df.set_index('ID')
-
-    st.write(df)
-
     key_in = st.text_input('Paste key for record to verify/reject')
 
     if key_in == "":
