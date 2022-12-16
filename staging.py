@@ -33,7 +33,7 @@ if authentication_status:
 
     df = pd.DataFrame(data)
 
-    df = df.set_index('key')
+    df = df.set_index('ID')
 
     st.write(df)
 
