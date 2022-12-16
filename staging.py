@@ -4,6 +4,7 @@ import database as db
 import pickle
 from pathlib import Path
 import streamlit_authenticator as stauth
+import json
 
 names = ["Ranjit Singh", "test 1", "test 2"]
 usernames = ["rsingh", "test1", "test 2"]
@@ -28,9 +29,13 @@ if authentication_status:
     st.subheader("Review record")
 
     data = db.fetchdb(0)
-    #data = db.get_unverified("no")
+    json_data = data.json()
+    json_data = json.loads(json_data)
+    df = pd.json_normalize(json_data, 'data')
 
-    df = pd.DataFrame(data)
+    df = df.set_index('ID')
+
+    st.write(df)
 
     df = df.set_index('ID')
 
