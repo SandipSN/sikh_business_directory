@@ -291,8 +291,8 @@ if authentication_status:
                         'Telephone': str(telephone), 
                         'Email': str(email),
                         'Verified': int(verified),
-                        'LATITUDE': latitude,
-                        'LONGITUDE': longitude,
+                        'LATITUDE': str(latitude),
+                        'LONGITUDE': str(longitude),
                         'Approved By': str(approved_by)
                         }
                 
