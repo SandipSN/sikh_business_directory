@@ -18,7 +18,7 @@ name = st.text_input("Enter the Business's Name")
 
 category = st.selectbox(
                 "Enter Category",
-                ("Arts & Crafts", "Clothing", "Entertainment & Events", "Finance", "Food & Drink", "Gurudwara", "Health & Fitness", "Home & Garden", "Legal", "Technology",  "Travel", "Vehicle", "Other")
+                ("Arts & Crafts", "Clothing", "Education", "Entertainment & Events", "Finance", "Food & Drink", "Gurudwara", "Health & Fitness", "Home & Garden", "Legal", "Technology",  "Travel", "Vehicle", "Other")
                 )
 
 if category == "Other": 
@@ -35,6 +35,18 @@ if category == "Arts & Crafts":
     sub_category = st.selectbox(
                     "Enter Sub Category", 
                     ("Paintings & Illustrations", "Shastar", "Music", "Logo Design", "Other"),
+                    key="1"
+                    )
+    
+    if sub_category == "Other": 
+        otherOption2 = st.text_input("Please type in an appropriate sub-category:")
+        sub_category = otherOption2
+        
+if category == "Education": 
+
+    sub_category = st.selectbox(
+                    "Enter Sub Category", 
+                    ("School", "Universtity Society", "Tuition", "Other"),
                     key="1"
                     )
     
