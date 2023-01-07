@@ -106,7 +106,7 @@ if category == "Home & Garden":
 
     sub_category = st.selectbox(
                     "Enter Sub Category", 
-                    ("Real Estate Agents", "Builders", "Plumbing", "Gas & Electric", "Landscapers", "Other"),
+                    ("Architects", "Real Estate Agents", "Builders", "Plumbing", "Gas & Electric", "Landscapers", "Other"),
                     key="1"
                     )
     
