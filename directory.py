@@ -23,7 +23,7 @@ json_data = json.loads(json_data)
 df = pd.json_normalize(json_data, 'data')
 
 directory = df[['Name', 'Link', 'Category', 'Sub Category', 'City', 'Nation', 'Address',  'Telephone', 'Email', 'LATITUDE', 'LONGITUDE']]
-directory = df.sort_values('Name', inplace=False)
+directory = directory.sort_values('Name', inplace=False)
 
 #AgGrid(directory)
 
