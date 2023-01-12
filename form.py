@@ -18,7 +18,7 @@ name = st.text_input("Enter the Business's Name")
 
 category = st.selectbox(
                 "Enter Category",
-                ("Arts & Crafts", "Clothing", "Education", "Entertainment & Events", "Finance", "Food & Drink", "Gurudwara", "Health & Fitness", "Home & Garden", "Legal", "Technology",  "Travel", "Vehicle", "Other")
+                ("Arts & Crafts", "Clothing", "Education", "Entertainment & Events", "Finance", "Food & Drink", "Gurudwara", "Health & Fitness", "Home & Garden", "Legal", "Technology", "Toys & Games" "Travel", "Vehicle", "Other")
                 )
 
 if category == "Other": 
